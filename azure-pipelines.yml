@@ -24,6 +24,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     sourceFolder: $(Build.SourcesDirectory)
+    Contents: '\target\helloworld.war'
     targetFolder: $(Build.ArtifactStagingDirectory)
 - task: PublishBuildArtifacts@1
   inputs:
