@@ -31,3 +31,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'java-jar'
     publishLocation: 'Container'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial (40252aba-9707-465a-aeac-f4c3a2ea3ae2)'
+    appType: 'webAppLinux'
+    WebAppName: 'java-app-test-001'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
